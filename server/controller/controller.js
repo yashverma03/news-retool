@@ -13,7 +13,7 @@ export const getNews = async (req, res) => {
     if (!search && !country) {
       apiUrl += `everything?apiKey=${apiKey}&q=india&pageSize=${pageSize}`;
     } else if (search && country) {
-      apiUrl += `everything?apiKey=${apiKey}&q=${search}&country=${country}&pageSize=${pageSize}`;
+      apiUrl += `top-headlines?apiKey=${apiKey}&q=${search}&country=${country}&pageSize=${pageSize}`;
     } else if (search) {
       apiUrl += `everything?apiKey=${apiKey}&q=${search}&pageSize=${pageSize}`;
     } else if (country) {
