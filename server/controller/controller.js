@@ -1,11 +1,23 @@
-export const getAllNews = () => {
-
+export const getAllNews = async (req, res) => {
+  try {
+    res.send('Get all news');
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-export const getTopHeadlinesByCountry = () => {
+export const getTopHeadlinesByCountry = async (req, res) => {
+  try {
 
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-export const getNewsBySearch = () => {
+export const getNewsBySearch = async (req, res) => {
+  try {
 
+  } catch (error) {
+    console.log(error);
+  }
 };
