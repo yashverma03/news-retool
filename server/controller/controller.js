@@ -8,14 +8,16 @@ export const getNews = async (req, res) => {
 
     let apiUrl = 'https://newsapi.org/v2/';
 
+    const pageSize = 10;
+
     if (!search && !country) {
-      apiUrl += `everything?apiKey=${apiKey}&q=india`;
+      apiUrl += `everything?apiKey=${apiKey}&q=india&pageSize=${pageSize}`;
     } else if (search && country) {
-      apiUrl += `everything?apiKey=${apiKey}&q=${search}&country=${country}`;
+      apiUrl += `everything?apiKey=${apiKey}&q=${search}&country=${country}&pageSize=${pageSize}`;
     } else if (search) {
-      apiUrl += `everything?apiKey=${apiKey}&q=${search}`;
+      apiUrl += `everything?apiKey=${apiKey}&q=${search}&pageSize=${pageSize}`;
     } else if (country) {
-      apiUrl += `top-headlines?apiKey=${apiKey}&country=${country}`;
+      apiUrl += `top-headlines?apiKey=${apiKey}&country=${country}&pageSize=${pageSize}`;
     } else {
       return res.status(400).json({ error: 'Invalid request' });
     }
