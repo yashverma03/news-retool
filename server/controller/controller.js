@@ -1,23 +1,18 @@
-export const getAllNews = async (req, res) => {
+export const getNews = async (req, res) => {
   try {
-    res.send('Get all news');
+    const { search, country } = req.query;
+
+    if (search) {
+      console.log('Search Query:', search);
+    }
+
+    if (country) {
+      console.log('Country Query:', country);
+    }
+
+    res.send('Get all news working correctly');
   } catch (error) {
     console.log(error);
-  }
-};
-
-export const getTopHeadlinesByCountry = async (req, res) => {
-  try {
-
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-export const getNewsBySearch = async (req, res) => {
-  try {
-
-  } catch (error) {
-    console.log(error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 };

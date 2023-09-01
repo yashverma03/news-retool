@@ -1,10 +1,8 @@
 import express from 'express';
-import { getAllNews, getTopHeadlinesByCountry, getNewsBySearch } from '../controller/controller.js';
+import { getNews } from '../controller/controller.js';
 
 const router = express.Router();
 
-router.get('/news', getAllNews);
-// router.get('/news', getTopHeadlinesByCountry);
-// router.get('/news', getNewsBySearch);
+router.get('/news', getNews);
 
 export default router;
